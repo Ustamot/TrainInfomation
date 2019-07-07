@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/traininfo.css">
     <title>運行情報一覧</title>
   </head>
   <body>
@@ -13,10 +14,10 @@
         </tr>
       </thead>
         
-        <tbody th:remove="all-but-first" th:each="info : ${info}">
+        <tbody th:remove="all-but-first" th:each="info,infoStat : ${info}">
           <tr>
-              <td th:text="${info.railway}">東西線</td>
-              <td th:text="${info.trainInformationText}">現在、平常どおり運転しています。</td>
+              <td th:class="${infoStat.odd}? 'odd' : 'even'" th:text="${info.railway}" width="150">東西線</td>
+              <td th:class="${infoStat.odd}? 'odd' : 'even'" th:text="${info.trainInformationText}" width="450">現在、平常どおり運転しています。</td>
           </tr>
           <tr>
             <td>日比谷線</td>

@@ -37,20 +37,12 @@ public class TokyoMetroController {
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public ModelAndView tokyometoro(ModelAndView model) {
 
-//		Set<String> keys = railwayMap.keySet();
-//		for (Object key : keys) {
-//			System.out.println("key: " + key);
 		TrainInfomationEntity[] infos = service.getTrainInfomation();
 		for (TrainInfomationEntity info : infos) {
 			TokyoMetroTrainInfomationEntity metro = (TokyoMetroTrainInfomationEntity) info;
 			metro.setRailway(railwayMap.get(metro.getRailway()));
-			System.out.println("railway: " + metro.getRailway() + ", text: " + metro.getTrainInformationText());
 		}
-//		    System.out.println(((TokyoMetroTrainInfomationEntity)entities[0]).getRailway());
-//		}
-		
-//		model.addObject("sample001", sample001.foo());
-//		model.addObject("sample002", sample002.goo());
+
 		model.addObject("info", infos);
 		model.setViewName("index");
 		return model;

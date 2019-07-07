@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+table { border-collapse: collapse; }
+
+td {  border: thin solid black; }
+
+th { border: thin solid black; }
+
+
+.odd{  background-color:white; }
+
+.even{  background-color:aliceblue; }
