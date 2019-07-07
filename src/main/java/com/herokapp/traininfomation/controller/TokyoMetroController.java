@@ -2,7 +2,6 @@ package com.herokapp.traininfomation.controller;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +19,7 @@ public class TokyoMetroController {
 	@Autowired
 	private TokyoMetroTrainInfomationServiceImpl service;
 	
+	@SuppressWarnings("serial")
 	private static Map<String, String> railwayMap = new HashMap<String, String>() {
 	    {
 	    	put("odpt.Railway:TokyoMetro.Tozai",      "東西線");
