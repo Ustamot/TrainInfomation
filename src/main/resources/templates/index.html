@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8">
+    <title>運行情報一覧</title>
+  </head>
+  <body>
+    <table border-width="1px 1px 1px 1px" border-style="solid" bordercolor="#333333">
+      <thead>
+        <tr>
+          <th bgcolor="#99CC00" >路線名</th>
+          <th bgcolor="#99CC00" >運行状況</th>
+        </tr>
+      </thead>
+        
+        <tbody th:remove="all-but-first" th:each="info : ${info}">
+          <tr>
+              <td th:text="${info.railway}">東西線</td>
+              <td th:text="${info.trainInformationText}">現在、平常どおり運転しています。</td>
+          </tr>
+          <tr>
+            <td>日比谷線</td>
+            <td>現在、平常どおり運転しています。</td>
+          </tr>
+          <tr>
+            <td>千代田線</td>
+            <td>現在、平常どおり運転しています。</td>
+          </tr>
+        </tbody>
+      
+    </table>
+  </body>
 </html>
